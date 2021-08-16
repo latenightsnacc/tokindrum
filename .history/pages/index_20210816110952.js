@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Link from 'next/link'
 // import Image from 'next/image'
 import {
   useSession, signIn, signOut
@@ -14,9 +13,6 @@ export default function Home() {
       <>
         <p>Welcome {session.user.name && session.user.email}</p> <br/>
         <div>You can now access our super secret pages.</div>
-        <button>
-          <Link href="/dashboard"> Visit Dashboard</Link>
-        </button>
         <button onClick={()=> signOut()}>Sign out</button>
       </>
     )

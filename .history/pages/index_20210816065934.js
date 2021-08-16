@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Link from 'next/link'
 // import Image from 'next/image'
 import {
   useSession, signIn, signOut
@@ -8,15 +7,10 @@ import styles from '../styles/Home.module.css'
 
 export default function Home() {
   const [session, loading] = useSession()
-  {loading && <div className={styles.title}>Loading...</div>}
   if(session) {
     return (
       <>
-        <p>Welcome {session.user.name && session.user.email}</p> <br/>
-        <div>You can now access our super secret pages.</div>
-        <button>
-          <Link href="/dashboard"> Visit Dashboard</Link>
-        </button>
+        <p>Welcome  {session.user.name && session.user.email}</p> <br/>
         <button onClick={()=> signOut()}>Sign out</button>
       </>
     )
